@@ -16,8 +16,6 @@ class UserViewSet(viewsets.ViewSet,generics.CreateAPIView,generics.ListAPIView,g
     parser_classes = [parsers.MultiPartParser,]
     # permission_classes = [perms.AdminOwner]
     #or co the viet ham xac thuc duoi day
-
-
     def get_permissions(self):
         if self.action in ['set_active','delete_user']:
             return [permissions.IsAdminUser()]
@@ -220,3 +218,7 @@ class NguoiThanViewSet(viewsets.ViewSet,generics.CreateAPIView):
 
     serializer_class = serializers.NguoiThanSerializer
 
+class DichVuViewSet(viewsets.ViewSet,generics.ListAPIView):
+    queryset = DichVu.objects.all()
+    serializer_class = serializers.DichVuSerializer
+    pagination_class = paginators.DichVuPaginator

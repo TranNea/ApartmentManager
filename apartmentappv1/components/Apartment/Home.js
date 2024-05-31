@@ -27,11 +27,11 @@ const user= useContext(MyUserContext)
                 right={(props) => <IconButton {...props} icon="dots-vertical" onPress={() =>{navigation.navigate("Home")}} />}
   />            
             <Menu.Item leadingIcon="text-long" onPress={() => navigation.navigate("Tudodientu")} title="Danh sách tủ đồ" />
-            <Menu.Item leadingIcon="text-long" onPress={() => navigation.navigate("Home")} title="Đăng kí dịch vụ" />
-            <Menu.Item leadingIcon="text-long" onPress={() => navigation.navigate("Home")} title="Hóa đơn" />
+            <Menu.Item leadingIcon="text-long" onPress={() => navigation.navigate("DichVu")} title="Đăng kí dịch vụ" />
+            <Menu.Item leadingIcon="text-long" onPress={() => navigation.navigate("HoaDon")} title="Hóa đơn" />
             <Menu.Item leadingIcon="text-long" onPress={() => navigation.navigate("Phananh")} title="Phản ánh" />
             <Menu.Item leadingIcon="text-long" onPress={() => navigation.navigate("Home")} title="Làm khảo sát" />
-            <Menu.Item leadingIcon="text-long" onPress={() => navigation.navigate("Home")} title="Đăng kí thẻ xe cho người thân" />
+            <Menu.Item leadingIcon="text-long" onPress={() => navigation.navigate("TheXeNguoiThan")} title="Đăng kí thẻ xe cho người thân" />
             <Menu.Item leadingIcon="text-long" onPress={() => navigation.navigate("Home")} title="Thông báo" />
         </View>
     )

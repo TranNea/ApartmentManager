@@ -11,13 +11,13 @@ import { MyUserContext } from '../../configs/Contexts';
 
 
 const Themphananh = () => {
-  const user= useContext(MyUserContext)
+  const user = useContext(MyUserContext)
   const [name, setName] = useState('');
   const [noiDung, setNoiDung] = useState('');
   const [imageUri, setImageUri] = useState(null);
   const [image, setImage] = useState(null);
   const [error, setError] = useState('');
-  const [successMessage, setSuccessMessage] = useState(''); 
+  const [successMessage, setSuccessMessage] = useState('');
 
 
 
@@ -31,7 +31,7 @@ const Themphananh = () => {
         mediaTypes: ImagePicker.MediaTypeOptions.Images,
         allowsEditing: true,
         aspect: [4, 3],
-      
+
         quality: 1,
       });
       if (!result.canceled) {
@@ -59,8 +59,8 @@ const Themphananh = () => {
           text: 'Đồng ý',
           onPress: async () => {
             // const cloudinaryURL = await uploadToCloudinary(image);
-          
-           
+
+
             const formData = new FormData();
             formData.append('name', name);
             formData.append('noiDung', noiDung);
@@ -90,40 +90,40 @@ const Themphananh = () => {
     );
   };
 
-//   const handleSubmit = async () => {
-//     if (!name || !noiDung || !image) {
-//       setError('Vui lòng điền đầy đủ thông tin và tải lên hình ảnh.');
-//       return;
-//     }
+  //   const handleSubmit = async () => {
+  //     if (!name || !noiDung || !image) {
+  //       setError('Vui lòng điền đầy đủ thông tin và tải lên hình ảnh.');
+  //       return;
+  //     }
 
-//     const formData = new FormData();
-//     formData.append('name', name);
-//     formData.append('noiDung', noiDung);
-//     formData.append('image', {
-//       uri: image,
-//       type: 'image/jpeg',
-//       name: 'photo.jpg',
-//     });
+  //     const formData = new FormData();
+  //     formData.append('name', name);
+  //     formData.append('noiDung', noiDung);
+  //     formData.append('image', {
+  //       uri: image,
+  //       type: 'image/jpeg',
+  //       name: 'photo.jpg',
+  //     });
 
-//     try {
-//       let res = await APIs.post(endpoints['vietphananh'], formData, {
-//         headers: {
-//           'Content-Type': 'multipart/form-data',
-//           'Authorization': `Bearer ${user.access_token}`,
-//         },
-//       });
-//       console.log('Success:', res.data);
-//       setSuccessMessage('Bài viết đã được đăng thành công.');
-//     } catch (ex) {
-//     //   console.error('Error posting:', error);
-//       console.error('Error posting:', ex.res?.data || ex.message);
-//       setError('Có lỗi xảy ra khi đăng bài viết.');
-//     }
-//   };
+  //     try {
+  //       let res = await APIs.post(endpoints['vietphananh'], formData, {
+  //         headers: {
+  //           'Content-Type': 'multipart/form-data',
+  //           'Authorization': `Bearer ${user.access_token}`,
+  //         },
+  //       });
+  //       console.log('Success:', res.data);
+  //       setSuccessMessage('Bài viết đã được đăng thành công.');
+  //     } catch (ex) {
+  //     //   console.error('Error posting:', error);
+  //       console.error('Error posting:', ex.res?.data || ex.message);
+  //       setError('Có lỗi xảy ra khi đăng bài viết.');
+  //     }
+  //   };
 
   return (
     <View>
-        <Text>{user.access_token}</Text>
+      <Text>{user.access_token}</Text>
       <TextInput
         placeholder="Name"
         value={name}

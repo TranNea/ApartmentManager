@@ -1,10 +1,12 @@
 import axios from "axios"
 // const BASE_URL="http://192.168.1.15:8000/"
-const BASE_URL="http://10.0.1.11:8000/"
+// const BASE_URL="http://10.0.1.11:8000/"
 // GiangNam
 // const BASE_URL="http://10.10.1.73:8000/"
 // const BASE_URL="http://10.10.1.73:8000/"
 // const BASE_URL="http://172.20.10.11:8000/"
+const BASE_URL="http://10.0.0.252:8000/"
+
 export const endpoints ={
     'tudodientus':'/tudodientus/',
     'hanghoas':'/hanghoas/',
@@ -16,6 +18,10 @@ export const endpoints ={
     'current-user':'/users/current-user/',
     'users':'/users/',
     'getUser':(userId) => `/users/${userId}/`,
+    'dichvus': '/dichvus/',
+    'hoadons': '/hoadons/',
+    'hoadon-details': (hoadonId) => `/hoadons/${hoadonId}/`,
+    'nguoithans': '/nguoithans/',
 }
 
 export const authApi = (token) => {

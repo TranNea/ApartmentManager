@@ -15,9 +15,12 @@ import MyUserReducer from './configs/Reducers';
 import Profile from './components/User/Profile';
 import FABGroupSceen from './components/Apartment/FABGroupSceen';
 import ThemPhanAnh from './components/Apartment/Themphananh';
-
 import Users from './components/Apartment/Users';
 import ChatApp from './components/Apartment/Chatapp';
+import DichVu from './components/Apartment/DichVu';
+import HoaDon from './components/Apartment/HoaDon';
+import HoaDonDetails from './components/Apartment/HoaDonDetails';
+import TheXeNguoiThan from './components/Apartment/TheXeNguoiThan';
 
 const Stack = createNativeStackNavigator();
 const MyStack = () => {
@@ -30,7 +33,10 @@ const MyStack = () => {
       <Stack.Screen name="Themphananh" component={ThemPhanAnh} options={{title:"Them Phan anh"}}/>
       <Stack.Screen name="ChatApp" component={ChatApp} options={{title:"chat"}}/>
       <Stack.Screen name="Users" component={Users} options={{title:"users"}}/>
-     
+      <Stack.Screen name="DichVu" component={DichVu} options={{title:"Dịch vụ"}}/>
+      <Stack.Screen name="HoaDon" component={HoaDon} options={{title:"Hóa đơn dịch vụ"}}/>
+      <Stack.Screen name="HoaDonDetails" component={HoaDonDetails} options={{title:"Hóa đơn chi tiết"}}/>
+      <Stack.Screen name="TheXeNguoiThan" component={TheXeNguoiThan} options={{title:"Đăng kí thông tin người thân"}}/>
     </Stack.Navigator>
     
   )
