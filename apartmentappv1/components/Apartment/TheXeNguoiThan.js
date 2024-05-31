@@ -41,6 +41,7 @@ const TheXeNguoiThan = () => {
                             let res = await APIs.post(endpoints['nguoithans'], formData, {
                                 headers: {
                                     'Content-Type': 'multipart/form-data',
+                                    'Authorization': `Bearer ${user.access_token}`,
                                 },
                             });
                             console.log('Success:', res.data);
