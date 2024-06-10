@@ -16,6 +16,8 @@ class UserViewSet(viewsets.ViewSet,generics.CreateAPIView,generics.ListAPIView,g
     parser_classes = [parsers.MultiPartParser,]
     # permission_classes = [perms.AdminOwner]
     #or co the viet ham xac thuc duoi day
+
+
     def get_permissions(self):
         if self.action in ['set_active','delete_user']:
             return [permissions.IsAdminUser()]
@@ -60,19 +62,30 @@ class UserViewSet(viewsets.ViewSet,generics.CreateAPIView,generics.ListAPIView,g
         instance.save()
         return Response(serializers.UserSerializer(instance).data)
 
-class HoaDonViewSet(viewsets.ViewSet, generics.RetrieveAPIView,generics.CreateAPIView):
-    queryset = HoaDon.objects.filter(active=True)
+class HoaDonViewSet(viewsets.ViewSet, generics.RetrieveAPIView,generics.CreateAPIView,generics.ListAPIView):
+    queryset = HoaDon.objects.all()
     serializer_class = serializers.HoaDonSerializer
-    permission_classes = [perms.HoaDonOwner]
+    # permission_classes = [perms.HoaDonOwner]
+    pagination_class =paginators.HoaDonPaginator
+
     def get_queryset(self):
         # Get Hang hoa theo name và get hang hoa theo từng mã tủ đồ
         # queryset=HoaDon.objects.filter(status='pending')
         queryset = self.queryset
-        q = self.request.query_params.get('status')
-        if q:
-            queryset = queryset.filter(status=q)
-
+        status = self.request.query_params.get('status')
+        if status:
+            queryset = queryset.filter(status=status)
         return queryset
+    def create(self, request, *args, **kwargs):
+        # Lấy người dùng hiện tại
+        user = request.user
+
+        # Tạo bản ghi mới
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save(user=user)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+
 
     @action(methods=['get'], url_path='dichvus', detail=True)
     def get_dichvus(self, request, pk=None):
@@ -94,8 +107,9 @@ class HoaDonViewSet(viewsets.ViewSet, generics.RetrieveAPIView,generics.CreateAP
 
 class PhanAnhViewSet(viewsets.ViewSet, generics.ListAPIView, generics.CreateAPIView):
     queryset = PhanAnh.objects.all()
+    # queryset = PhanAnh.objects.filter(active=True)
     serializer_class = serializers.PhanAnhSerializer
-
+    pagination_class = paginators.PhanAnhPaginator
     # get_permissions: chỉ user đã chứng thực mới được phép thêm phản ánh
     def get_permissions(self):
         if self.action == 'create':
@@ -212,7 +226,7 @@ class DapAnKhaoSatViewSet(viewsets.ViewSet,generics.ListAPIView):
 #     }
 #     return Response(data, status=status.HTTP_200_OK)
 
-class NguoiThanViewSet(viewsets.ViewSet, generics.CreateAPIView):
+class NguoiThanViewSet(viewsets.ViewSet, generics.CreateAPIView,generics.ListAPIView):
     # queryset = User.objects.filter(is_active=True)
     queryset = NguoiThan.objects.all()
     serializer_class = serializers.NguoiThanSerializer
@@ -237,3 +251,11 @@ class DichVuViewSet(viewsets.ViewSet,generics.ListAPIView):
     queryset = DichVu.objects.all()
     serializer_class = serializers.DichVuSerializer
     pagination_class = paginators.DichVuPaginator
+
+    def get_queryset(self):
+        # Get Hang hoa theo name và get hang hoa theo từng mã tủ đồ
+        queryset = self.queryset
+        q = self.request.query_params.get('q')
+        if q:
+            queryset = queryset.filter(name__icontains=q)
+        return queryset

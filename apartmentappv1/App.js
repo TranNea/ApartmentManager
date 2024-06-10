@@ -1,5 +1,5 @@
 
-import React, { useContext, useReducer } from 'react';
+import React, { useContext, useEffect, useReducer } from 'react';
 import Tudodientu from './components/Apartment/Tudodientu/';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
@@ -15,14 +15,26 @@ import MyUserReducer from './configs/Reducers';
 import Profile from './components/User/Profile';
 import FABGroupSceen from './components/Apartment/FABGroupSceen';
 import ThemPhanAnh from './components/Apartment/Themphananh';
+
+import app from './firebaseConfig';
+import { initializeApp } from 'firebase/app';
 import Users from './components/Apartment/Users';
 import ChatApp from './components/Apartment/Chatapp';
-import DichVu from './components/Apartment/DichVu';
-import HoaDon from './components/Apartment/HoaDon';
-import HoaDonDetails from './components/Apartment/HoaDonDetails';
+import messaging from '@react-native-firebase/messaging';
+import {Alert, PermissionsAndroid} from 'react-native';
 import TheXeNguoiThan from './components/Apartment/TheXeNguoiThan';
+import Dichvu from './components/Apartment/Dichvu';
+import Hoadon from './components/Apartment/Hoadon';
+import Hoadondetails from './components/Apartment/Hoadondetails';
+import PhieuKhaoSat from './components/Apartment/PhieuKhaoSat';
+import LamKhaoSat from './components/Apartment/LamKhaoSat';
+
+
+
+
 
 const Stack = createNativeStackNavigator();
+
 const MyStack = () => {
   return(
     <Stack.Navigator screenOptions={{headerShown:false}}>
@@ -33,10 +45,12 @@ const MyStack = () => {
       <Stack.Screen name="Themphananh" component={ThemPhanAnh} options={{title:"Them Phan anh"}}/>
       <Stack.Screen name="ChatApp" component={ChatApp} options={{title:"chat"}}/>
       <Stack.Screen name="Users" component={Users} options={{title:"users"}}/>
-      <Stack.Screen name="DichVu" component={DichVu} options={{title:"Dịch vụ"}}/>
-      <Stack.Screen name="HoaDon" component={HoaDon} options={{title:"Hóa đơn dịch vụ"}}/>
-      <Stack.Screen name="HoaDonDetails" component={HoaDonDetails} options={{title:"Hóa đơn chi tiết"}}/>
+      <Stack.Screen name="Dichvu" component={Dichvu} options={{title:"Dịch vụ"}}/>
+      <Stack.Screen name="Hoadon" component={Hoadon} options={{title:"Hóa đơn dịch vụ"}}/>
+      <Stack.Screen name="Hoadondetails" component={Hoadondetails} options={{title:"Hóa đơn chi tiết"}}/>
       <Stack.Screen name="TheXeNguoiThan" component={TheXeNguoiThan} options={{title:"Đăng kí thông tin người thân"}}/>
+      <Stack.Screen name="PhieuKhaoSat" component={PhieuKhaoSat} options={{title:"Làm khảo sát"}}/>
+      <Stack.Screen name="LamKhaoSat" component={LamKhaoSat} options={{title:"Làm chi tiết khảo sát"}}/>
     </Stack.Navigator>
     
   )
@@ -51,7 +65,6 @@ const MyTab = () => {
       {user===null?<>
         <Tab.Screen name="Login" component={Login} options={{tabBarIcon: () => <Icon size={30} color="blue" source="login" />}} />
         <Tab.Screen name="Register" component={Register} options={{tabBarIcon: () => <Icon size={30} color="blue" source="account" />}} />
-
        </>:<>
        <Tab.Screen name="Home" component={MyStack} options={{tabBarIcon: () => <Icon size={30} color="blue" source="home" />}} />
       <Tab.Screen name="FUNC" component={MyStack} options={{tabBarIcon: () => <Icon size={30} color="blue" source="function" />}} />
@@ -65,7 +78,16 @@ const MyTab = () => {
     </React.Fragment>
   );
 }
+
 export default function App(){
+
+    
+
+
+  useEffect(() => {
+  
+  }, []);
+  
       // khởi tạo reducer với MyUserReducer và thiết lập trạng thái ban đầu là null.
       //Component MyUserContext.Provider làm cho trạng thái user khả dụng với bất kỳ component lồng nào gọi useContext(MyUserContext).
       //Component MyDispatchContext.Provider làm cho hàm dispatch khả dụng với bất kỳ component lồng nào gọi useContext(MyDispatchContext).

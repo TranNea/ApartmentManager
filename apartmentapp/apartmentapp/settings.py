@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-0@pced*bxa-*dxvzdr0))xwv_mprmnsmo*z516af)(y%&mpk(v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["192.168.1.15","10.0.1.11","10.0.0.252"]
+ALLOWED_HOSTS = ["10.0.0.93", "10.0.0.86"]
 # OAUTH2_PROVIDER = { 'OAUTH2_BACKEND_CLASS': 'oauth2_provider.oauth2_backends.JSONOAuthLibCore' }
 # Application definition
 
@@ -148,8 +148,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-OAUTH2_PROVIDER = { 'OAUTH2_BACKEND_CLASS': 'oauth2_provider.oauth2_backends.JSONOAuthLibCore' }
+# OAUTH2_PROVIDER = { 'OAUTH2_BACKEND_CLASS': 'oauth2_provider.oauth2_backends.JSONOAuthLibCore' }
 
 CLIENT_ID='ga4gpva8OJ4DDAiZ2MBfH0XkXYiHG02P1Cdq1UUG'
 CLIENT_SECRET='LaMlOXMiVIyFMgawsCqDzAae5rS2RhcEjLTLAQB23sHzZZlIzL7z2zAqJgILhcqpFOzDk713UrYsO67r5HASxjce6fdBh4d1XZ4iczeNzpla8F8kFDeCC86DsbFOvwXS'

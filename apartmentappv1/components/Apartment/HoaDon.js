@@ -6,50 +6,66 @@ import { List } from "react-native-paper";
 import { MyUserContext } from "../../configs/Contexts";
 import moment from "moment/moment";
 import { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 
 
-const HoaDon = ({ navigation }) => {
+
+const Hoadon = () => {
    const [hoadons, setHoadons] = React.useState([]);
    const [loading, setLoading] = React.useState(false);
    const [status, setStatus] = React.useState('');
    const [selectedButton, setSelectedButton] = useState('');
-
+   const nav= useNavigation();
+//    const selectChecked = navigation.params?.selectedServices;
+    // const route = useRoute();
 
    const user = useContext(MyUserContext);
 
+//    const selectChecked= route.params?.selectedServices;
 
    // console.log('Authtoken:', user.access_token);
 
 
    const loadHoaDons = async () => {
-       setLoading(true);
-       try {
-           let res = await APIs.get(endpoints['hoadons'], {
-               headers: {
-                   'Authorization': `Bearer ${user.access_token}`,
-               },
-               params: {
-                   status: status // Truyền trạng thái
-               }
-           });
-           setHoadons(res.data);
-       } catch (ex) {
-           console.error(ex);
-       } finally {
-           setLoading(false)
-       }
-   }
+       
+        setLoading(true);
+        try {
+            let res = await APIs.get(endpoints['hoadons'], {
+                headers: {
+                'Authorization': `Bearer ${user.access_token}`,
+                },
+                params: {
+                status: status,
+                user: user.id
+                
+                }
+            });
+            // console.log(res.data)
+            setHoadons(res.data.results.filter(item => item.user.id === user.id));
+            
+            } catch (ex) {
+            console.error(ex);
+            } finally {
+            setLoading(false)
+            }
+    };
 
 
    React.useEffect(() => {
+    
        loadHoaDons()
    }, [status])
 
 
    const handleButtonPress = (newStatus) => {
-       setStatus(newStatus);
-       setSelectedButton(newStatus);
-   };
+    if (newStatus === selectedButton) {
+        setStatus(null); // Nếu nút được nhấn trước đó đã được chọn lại, đặt trạng thái thành null (Tất cả)
+        setSelectedButton('');
+    } else {
+        setStatus(newStatus);
+        setSelectedButton(newStatus);
+    }
+};
 
 
    return (
@@ -77,7 +93,7 @@ const HoaDon = ({ navigation }) => {
            <ScrollView>
                {loading && <ActivityIndicator />}
                {hoadons.map(c => (
-                   <TouchableOpacity key={c.id} onPress={() => navigation.navigate("HoaDonDetails", { hoadonId: c.id })}>
+                   <TouchableOpacity key={c.id} onPress={() => nav.navigate("Hoadondetails", { hoadonId: c.id })}>
                        <List.Item style={MyStyles.margin} title={c.name} description={moment(c.created_date).fromNow()} />
                    </TouchableOpacity>
                ))}
@@ -94,7 +110,7 @@ const HoaDon = ({ navigation }) => {
        </View>
    )
 };
-export default HoaDon
+export default Hoadon
 
 
 const styles = StyleSheet.create({

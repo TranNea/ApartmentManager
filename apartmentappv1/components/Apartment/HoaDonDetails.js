@@ -1,12 +1,11 @@
-import MyStyles from "../../styles/MyStyles";
-import { View, ActivityIndicator } from "react-native"
-import React, { useContext } from 'react';
-import { Card, Text } from "react-native-paper"
-import APIs, { endpoints } from "../../configs/APIs";
-import RenderHTML from "react-native-render-html";
-import { MyUserContext } from "../../configs/Contexts";
+import React, { useContext, useEffect, useState } from 'react';
+import { View, ActivityIndicator, StyleSheet } from 'react-native';
+import { Avatar, Button, Card } from 'react-native-paper';
+import RenderHTML from 'react-native-render-html';
+import APIs, { endpoints } from '../../configs/APIs';
+import { MyUserContext } from '../../configs/Contexts';
 
-const HoaDonDetails = ({ route }) => {
+const Hoadondetails = ({ route }) => {
 
 
    const [hoadon, setHoadon] = React.useState(null);
@@ -37,24 +36,45 @@ const HoaDonDetails = ({ route }) => {
 
 
    return (
-       <View style={[MyStyles.container, MyStyles.margin]}>
-           {hoadon === null ? <ActivityIndicator /> : (
-               <Card>
-                   <Card.Title title={hoadon.name} subtitle={hoadon.user.username}
-                       left={(props) => <Avatar.Image {...props} source={{ uri: `https://res.cloudinary.com/dawe6629q/${hoadon.user.avatar}` }} />}
-                   />
-                   <Card.Content>
-                       <RenderHTML source={{ html: hoadon.thongTinHD }} />
-                       <RenderHTML source={{ html: hoadon.dichVu.map(dv => dv.name).join(', ') }} />
-                   </Card.Content>
-                   <Card.Actions>
-                       <Button>Chi tiết hoá đơn</Button>
-                   </Card.Actions>
-               </Card>
-           )}
-       </View>
-
-
-   )
+    <View style={styles.container}>
+        {hoadon ? (
+            <Card>
+                <Card.Title
+                    title={hoadon.name}
+                    subtitle={hoadon.user.username}
+                    left={(props) => (
+                        <Avatar.Image
+                            {...props}
+                            source={{ uri: hoadon.user.avatar }}
+                        />
+                    )}
+                />
+                <Card.Content>
+                    <RenderHTML source={{ html: hoadon.thongTinHD }} />
+                    <RenderHTML
+                        source={{
+                            html: hoadon.dichVu_details.map((dv) => dv.name).join(', '),
+                        }}
+                    />
+                </Card.Content>
+                <Card.Actions>
+                    <Button>Chi tiết hoá đơn</Button>
+                </Card.Actions>
+            </Card>
+        ) : (
+            <ActivityIndicator style={styles.loading} />
+        )}
+    </View>
+);
 }
-export default HoaDonDetails;
+export default Hoadondetails;
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    loading: {
+        marginTop: 20,
+    },
+});
