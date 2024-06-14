@@ -5,6 +5,8 @@ import * as ImagePicker from 'expo-image-picker';
 import { useNavigation } from '@react-navigation/native';
 import APIs, { endpoints } from '../../configs/APIs';
 import MyStyles from "../../styles/MyStyles";
+import Background from './Background';
+import Styles from './Styles';
 
 const Register = () => {
   const [username, setUsername] = useState('');
@@ -45,7 +47,7 @@ const Register = () => {
           form.append('avatar', {
             uri: avatar.uri,
             name: avatar.uri.split('/').pop(),
-            type: 'image/jpeg' 
+            type: 'image/jpeg'
           });
         }
         let res = await APIs.post(endpoints['register'], form, {
@@ -72,63 +74,57 @@ const Register = () => {
   }
 
   return (
-    <View style={MyStyles.container}>
-      <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-        <ScrollView>
-          <Text>ĐĂNG KÍ NGƯỜI DÙNG</Text>
-          <TextInput
-            value={username}
-            onChangeText={setUsername}
-            style={MyStyles.margin}
-            label="Tên đăng nhập"
-            right={<TextInput.Icon icon="account" />}
-          />
-          <TextInput
-            value={email}
-            onChangeText={setEmail}
-            style={MyStyles.margin}
-            label="Email"
-            right={<TextInput.Icon icon="email" />}
-          />
-          <TextInput
-            value={password}
-            onChangeText={setPassword}
-            style={MyStyles.margin}
-            label="Mật khẩu"
-            secureTextEntry
-            right={<TextInput.Icon icon="eye" />}
-          />
-          <TextInput
-            value={confirmPassword}
-            onChangeText={setConfirmPassword}
-            style={MyStyles.margin}
-            label="Xác nhận mật khẩu"
-            secureTextEntry
-            right={<TextInput.Icon icon="eye" />}
-          />
-          <TouchableRipple onPress={picker}>
-            <Text style={MyStyles.margin} icon="image">Chọn ảnh đại diện</Text>
-          </TouchableRipple>
-          {avatar && <Image style={MyStyles.avatar} source={{ uri: avatar.uri }} />}
-          <HelperText type="error" visible={err}>
-            {errorMessage}
-          </HelperText>
-          <Button loading={loading} onPress={register} style={MyStyles.margin} mode="contained" icon="account">
-            ĐĂNG KÍ
-          </Button>
-        </ScrollView>
-      </KeyboardAvoidingView>
-    </View>
-  );
+    <Background>
+      <View style={Styles.container}>
+        <Text style={Styles.textTitle}>Đăng kí</Text>
+        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+          <ScrollView style={[Styles.form, { paddingTop: 50 }]}>
+            <TextInput
+              value={username}
+              onChangeText={setUsername}
+              style={Styles.input}
+              label="Tên đăng nhập"
+              right={<TextInput.Icon icon="account" />}
+            />
+            <TextInput
+              value={email}
+              onChangeText={setEmail}
+              style={Styles.input}
+              label="Email"
+              right={<TextInput.Icon icon="email" />}
+            />
+            <TextInput
+              value={password}
+              onChangeText={setPassword}
+              style={Styles.input}
+              label="Mật khẩu"
+              secureTextEntry
+              right={<TextInput.Icon icon="eye" />}
+            />
+            <TextInput
+              value={confirmPassword}
+              onChangeText={setConfirmPassword}
+              style={Styles.input}
+              label="Xác nhận mật khẩu"
+              secureTextEntry
+              right={<TextInput.Icon icon="eye" />}
+            />
+            <TouchableRipple onPress={picker}>
+              <Text style={[Styles.content, { alignSelf: 'center', paddingTop: 10}]} icon="image">Chọn ảnh đại diện</Text>
+            </TouchableRipple>
+            {avatar && <Image style={[MyStyles.avatar, { alignSelf: 'center'}]} source={{ uri: avatar.uri }} />}
+            <HelperText type="error" visible={err}>
+              {errorMessage}
+            </HelperText>
+            <Button loading={loading} onPress={register} style={[Styles.button]} mode="contained" icon="account">
+              ĐĂNG KÍ
+            </Button>
+          </ScrollView>
+        </KeyboardAvoidingView>
+      </View>
+    </Background>
+  )
 };
-
-const styles = StyleSheet.create({
-  error: {
-    color: 'red',
-    marginVertical: 10,
-  },
-});
-
 export default Register;
 
 
