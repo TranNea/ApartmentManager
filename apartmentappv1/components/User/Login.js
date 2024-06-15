@@ -99,15 +99,17 @@ const Login = () => {
 
   return (
     <Background>
-      <View style={Styles.container}>
-        <Text style={Styles.textTitle}>Đăng nhập</Text>
-        <View style={[Styles.form, {alignItems: 'center'}, {paddingTop: 100}]}>
-          <Text style={Styles.textContent}>Welcome Back</Text>
-          <Text style={Styles.content}>Đăng nhập vào tài khoản của bạn</Text>
-          {fields.map(c => <TextInput style={Styles.input} secureTextEntry={c.secureTextEntry} value={user[c.name]} onChangeText={t => updateSate(c.name, t)} key={c.name} label={c.label} right={<TextInput.Icon icon={c.icon} />} />)}
-          <Button style={[Styles.button, { marginTop: 160 }]} icon="account" loading={loading} mode="contained" onPress={login}>ĐĂNG NHẬP</Button>
+      <KeyboardAvoidingView behavior='position' keyboardVerticalOffset={Platform.OS === 'ios' ? '40' : '0'}>
+        <View style={Styles.container}>
+          <Text style={Styles.textTitle}>Đăng nhập</Text>
+          <View style={[Styles.form, { alignItems: 'center' }, { paddingTop: 100 }]}>
+            <Text style={Styles.textContent}>Welcome Back</Text>
+            <Text style={Styles.content}>Đăng nhập vào tài khoản của bạn</Text>
+            {fields.map(c => <TextInput style={Styles.input} secureTextEntry={c.secureTextEntry} value={user[c.name]} onChangeText={t => updateSate(c.name, t)} key={c.name} label={c.label} right={<TextInput.Icon icon={c.icon} />} />)}
+            <Button style={[Styles.button, { marginTop: 160 }]} icon="account" loading={loading} mode="contained" onPress={login}>ĐĂNG NHẬP</Button>
+          </View>
         </View>
-      </View>
+      </KeyboardAvoidingView>
     </Background>
   )
 }

@@ -75,9 +75,9 @@ const Register = () => {
 
   return (
     <Background>
-      <View style={Styles.container}>
-        <Text style={Styles.textTitle}>Đăng kí</Text>
-        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+      <KeyboardAvoidingView behavior='position' keyboardVerticalOffset={Platform.OS === 'ios' ? '40' : '0'}>
+        <View style={Styles.container}>
+          <Text style={Styles.textTitle}>Đăng kí</Text>
           <ScrollView style={[Styles.form, { paddingTop: 50 }]}>
             <TextInput
               value={username}
@@ -110,9 +110,9 @@ const Register = () => {
               right={<TextInput.Icon icon="eye" />}
             />
             <TouchableRipple onPress={picker}>
-              <Text style={[Styles.content, { alignSelf: 'center', paddingTop: 10}]} icon="image">Chọn ảnh đại diện</Text>
+              <Text style={[Styles.content, { alignSelf: 'center', paddingTop: 10 }]} icon="image">Chọn ảnh đại diện</Text>
             </TouchableRipple>
-            {avatar && <Image style={[MyStyles.avatar, { alignSelf: 'center'}]} source={{ uri: avatar.uri }} />}
+            {avatar && <Image style={[MyStyles.avatar, { alignSelf: 'center' }]} source={{ uri: avatar.uri }} />}
             <HelperText type="error" visible={err}>
               {errorMessage}
             </HelperText>
@@ -120,8 +120,8 @@ const Register = () => {
               ĐĂNG KÍ
             </Button>
           </ScrollView>
-        </KeyboardAvoidingView>
-      </View>
+        </View>
+      </KeyboardAvoidingView>
     </Background>
   )
 };

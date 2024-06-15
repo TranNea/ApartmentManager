@@ -63,13 +63,13 @@ const MyTab = () => {
     <React.Fragment>
       <Tab.Navigator>
         {user === null ? <>
-          <Tab.Screen name="Login" component={Login} options={{ tabBarIcon: () => <Icon size={30} color="blue" source="login" /> }} />
-          <Tab.Screen name="Register" component={Register} options={{ tabBarIcon: () => <Icon size={30} color="blue" source="account" /> }} />
+          <Tab.Screen name="Login" component={Login} options={{ tabBarIcon: () => <Icon size={40} color="#1A4D2E" source="login" /> }} />
+          <Tab.Screen name="Register" component={Register} options={{ tabBarIcon: () => <Icon size={40} color="#1A4D2E" source="account" /> }} />
         </> : <>
-          <Tab.Screen name="Home" component={MyStack} options={{ tabBarIcon: () => <Icon size={30} color="blue" source="home" /> }} />
+          <Tab.Screen name="Home" component={MyStack} options={{ tabBarIcon: () => <Icon size={40} color="#1A4D2E" source="home" /> }} />
           {/* <Tab.Screen name="FUNC" component={MyStack} options={{tabBarIcon: () => <Icon size={30} color="blue" source="function" />}} /> */}
-          <Tab.Screen name="Users" component={Users} options={{ title: "chat", tabBarIcon: () => <Icon size={30} color="blue" source="group" /> }} />
-          <Tab.Screen name="Profile" component={Profile} options={{ title: user.username, tabBarIcon: () => <Icon size={30} color="blue" source="account" /> }} />
+          <Tab.Screen name="Users" component={Users} options={{ title: "chat", tabBarIcon: () => <Icon size={40} color="#1A4D2E" source="chat" /> }} />
+          <Tab.Screen name="Profile" component={Profile} options={{ title: user.username, tabBarIcon: () => <Icon size={40} color="#1A4D2E" source="account" /> }} />
         </>}
 
       </Tab.Navigator>

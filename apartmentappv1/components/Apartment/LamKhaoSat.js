@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { View, TextInput, Button, Text, Alert, ScrollView, StyleSheet } from 'react-native';
 import APIs, { endpoints } from '../../configs/APIs';
 import { MyUserContext } from '../../configs/Contexts';
+import MyStyles from '../../styles/MyStyles';
 
 const LamKhaoSat = ({ route }) => {
     const user = useContext(MyUserContext);
