@@ -59,4 +59,12 @@ export default StyleSheet.create({
         marginVertical: 12,
         backgroundColor: '#1A4D2E',
     },
+    errorText: {
+        color: 'red',
+        marginTop: 10,
+    },
+    successText: {
+        color: 'green',
+        marginTop: 10,
+    },
 });

@@ -1,9 +1,9 @@
-import { Alert, KeyboardAvoidingView, Platform, StyleSheet, Text, TextInput, View, Button, FlatList, ScrollView } from 'react-native';
+import { Alert, KeyboardAvoidingView, Platform, StyleSheet, Text, TextInput, View, FlatList, ScrollView } from 'react-native';
 import React, { useContext, useState } from 'react';
 import MyStyles from '../../styles/MyStyles';
 import APIs, { endpoints } from '../../configs/APIs';
 import { MyUserContext } from '../../configs/Contexts';
-import { IconButton, List } from 'react-native-paper';
+import { IconButton, List, Button } from 'react-native-paper';
 import moment from 'moment';
 
 
@@ -114,12 +114,12 @@ const TheXeNguoiThan = () => {
                     onChangeText={setSdt}
                     style={styles.input}
                 />
-                {error ? <Text style={{ color: 'red', marginTop: 10 }}>{error}</Text> : null}
-                {successMessage ? <Text style={{ color: 'green', marginTop: 10 }}>{successMessage}</Text> : null}
+                {error ? <Text style={MyStyles.errorText}>{error}</Text> : null}
+                {successMessage ? <Text style={MyStyles.successText}>{successMessage}</Text> : null}
 
-                <Button onPress={handleSubmit} style={MyStyles.margin} title="Submit" />
+                <Button style={MyStyles.button} mode="contained" onPress={handleSubmit}>SUBMIT</Button>
             </KeyboardAvoidingView>
-            <Text style={MyStyles.subject}>DANH SÁCH NGƯỜI THÂN</Text>
+            <Text style={[MyStyles.subject, {marginTop: 20, marginBottom: 10}]}>DANH SÁCH NGƯỜI THÂN</Text>
             <ScrollView>
           
             {nguoiThans.map(item =>
@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
     },
     item: {
         marginBottom: 20,
-        backgroundColor: '#fff',
+        backgroundColor: '#FFF7F1',
         borderRadius: 10,
         padding: 10,
         elevation: 3,
@@ -173,10 +173,7 @@ const styles = StyleSheet.create({
     profileName: {
         fontSize: 16,
         fontWeight: 'bold',
-    },
-    divider: {
-        marginTop: 10,
-        color: '#999',
+        color: '#1A4D2E',
     },
     status: {
         padding: 5,
@@ -185,10 +182,13 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     pending: {
-        backgroundColor: 'yellow',
+        backgroundColor: '#E8DFCA',
         color: 'black',
+        fontWeight: 'bold',
     },
     pass: {
-        backgroundColor: 'green',
+        backgroundColor: '#4F6F52',
+        color: 'white',
+        fontWeight: 'bold',
     },
 });
