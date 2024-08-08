@@ -28,6 +28,7 @@ import Hoadon from './components/Apartment/Hoadon';
 import Hoadondetails from './components/Apartment/Hoadondetails';
 import PhieuKhaoSat from './components/Apartment/PhieuKhaoSat';
 import LamKhaoSat from './components/Apartment/LamKhaoSat';
+import PaymentScreen from './components/Apartment/PaymentScreen';
 
 
 
@@ -51,6 +52,7 @@ const MyStack = () => {
       <Stack.Screen name="TheXeNguoiThan" component={TheXeNguoiThan} options={{ title: "Đăng kí thông tin người thân" }} />
       <Stack.Screen name="PhieuKhaoSat" component={PhieuKhaoSat} options={{ title: "Làm khảo sát" }} />
       <Stack.Screen name="LamKhaoSat" component={LamKhaoSat} options={{ title: "Làm chi tiết khảo sát" }} />
+      <Stack.Screen name="PaymentScreen" component={PaymentScreen} options={{title:"thanh toan hoa dơn trực tuyến"}}/>
     </Stack.Navigator>
 
   )

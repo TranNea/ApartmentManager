@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework import viewsets, generics, status,parsers,permissions
 from apartment import serializers, paginators,perms
 from apartment.models import (PhanAnh, HangHoa, HoaDon,DichVu, TuDoDienTu,
-                              PhieuKhaoSat, DapAnKhaoSat, CauHoiKhaoSat,User,NguoiThan)
+                              PhieuKhaoSat, DapAnKhaoSat, CauHoiKhaoSat,User,NguoiThan,CanHo)
 from rest_framework.decorators import action
 from rest_framework.response import Response
 
@@ -73,8 +73,11 @@ class HoaDonViewSet(viewsets.ViewSet, generics.RetrieveAPIView,generics.CreateAP
         # queryset=HoaDon.objects.filter(status='pending')
         queryset = self.queryset
         status = self.request.query_params.get('status')
+        user_id = self.request.query_params.get('user_id')
         if status:
             queryset = queryset.filter(status=status)
+        if user_id:
+            queryset = queryset.filter(user__id=user_id)
         return queryset
     def create(self, request, *args, **kwargs):
         # Lấy người dùng hiện tại
@@ -122,6 +125,7 @@ class PhanAnhViewSet(viewsets.ViewSet, generics.ListAPIView, generics.CreateAPIV
 
 class HangHoaViewSet(viewsets.ViewSet, generics.ListAPIView,generics.RetrieveAPIView):
     queryset = HangHoa.objects.filter(active=True)
+    # queryset = HangHoa.objects.filter(status='waiting')
     serializer_class = serializers.HangHoaSerializer
     pagination_class = paginators.HangHoaPaginator
 
@@ -130,10 +134,13 @@ class HangHoaViewSet(viewsets.ViewSet, generics.ListAPIView,generics.RetrieveAPI
         queryset = self.queryset
         q = self.request.query_params.get('q')
         tudo_id = self.request.query_params.get('tuDo')
+        status_hanghoa = self.request.query_params.get('status')
         if q:
             queryset = queryset.filter(name__icontains=q)
         if tudo_id:
             queryset = queryset.filter(tuDo=tudo_id)
+        if status_hanghoa:
+            queryset = queryset.filter(status=status_hanghoa)
         return queryset
 
 
@@ -259,3 +266,7 @@ class DichVuViewSet(viewsets.ViewSet,generics.ListAPIView):
         if q:
             queryset = queryset.filter(name__icontains=q)
         return queryset
+class CanHoViewSet(viewsets.ViewSet,generics.ListAPIView):
+    queryset = CanHo.objects.all()
+    serializer_class = serializers.CanHoSerializer
+

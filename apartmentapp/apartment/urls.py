@@ -14,7 +14,7 @@ r.register('users',views.UserViewSet,basename='users')
 r.register('nguoithans',views.NguoiThanViewSet,basename='nguoithans')
 r.register('dapankhaosats',views.DapAnKhaoSatViewSet,basename='dapankhaosats')
 r.register('dichvus',views.DichVuViewSet,basename='dichvus')
-# r.register('cauhoikhaosats',views.CauHoiKhaoSatViewSet,basename='cauhoikhaosats')
+r.register('canhos',views.CanHoViewSet,basename='canhos')
 urlpatterns = [
     path('',include(r.urls))
 ]

@@ -113,7 +113,7 @@ const Dichvu = () => {
         <View style={MyStyles.container}>
             <Text style={MyStyles.subject}>DANH SÁCH DỊCH VỤ TRONG CHUNG CƯ</Text>
             <View>
-                <Searchbar style={{ backgroundColor: '#F5EFE6' }} placeholder="Tìm dịch vụ..." value={q} onChangeText={t => search(t)} />
+                <Searchbar style={{ backgroundColor: '#F5EFE6' }} placeholder="Tìm dịch vụ..." value={q} onChangeText={t => search(t,setQ)} />
             </View>
             <ScrollView onScroll={loadMore}>
                 <RefreshControl refreshing={loading} onRefresh={() => loadDichVus()} />

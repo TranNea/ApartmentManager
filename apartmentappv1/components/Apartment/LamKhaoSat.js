@@ -4,6 +4,7 @@ import { Button } from "react-native-paper";
 import APIs, { endpoints } from '../../configs/APIs';
 import { MyUserContext } from '../../configs/Contexts';
 import MyStyles from '../../styles/MyStyles';
+import RenderHTML from 'react-native-render-html';
 
 
 const LamKhaoSat = ({ route }) => {
@@ -99,7 +100,8 @@ const LamKhaoSat = ({ route }) => {
             {cauHois.length > 0 ? (
                 cauHois.map((q) => (
                     <View key={q.id} style={{ marginBottom: 20 }}>
-                        <Text style={styles.question}>{q.cauHoi}</Text>
+                        {/* <Text style={styles.question}>{q.cauHoi}</Text> */}
+                        <RenderHTML source={{ html:q.cauHoi }} contentWidth={300} />
                         <TextInput
                             placeholder="Câu trả lời"
                             value={dapAns[q.id] || ''}

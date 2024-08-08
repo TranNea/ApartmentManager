@@ -1,3 +1,44 @@
+// import { StyleSheet } from "react-native";
+
+// export default StyleSheet.create({
+//     container:{
+//         flex:1,
+//         // marginTop : 60,
+//         // justifyContent:"center",
+//         // alignItems:"center"
+//     },subject:{
+//         fontSize:30,
+//         fontWeight:"bold",
+//         color:"blue"
+
+//     },row:{
+//         flexDirection: "row",
+//         flexWrap:"wrap"
+//     },margin:{
+//         margin:5
+//     },avatar:{
+//         width:80,
+//         height:80,
+//         borderRadius:20,
+//     },
+//     banner:{
+//         flex:0.5,
+//         backgroundColor:"#6495ed"
+//     },
+//     status: {
+//         padding: 5,
+//         borderRadius: 5,
+//         color: 'white',
+//         textAlign: 'center',
+//     }, 
+//     pending: {
+//         backgroundColor: 'yellow',
+//         color: 'black',
+//     },
+//     pass: {
+//         backgroundColor: 'green',
+//     },
+// });
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
@@ -5,7 +46,7 @@ export default StyleSheet.create({
         flex: 1,
         backgroundColor: "#fff",
     }, subject: {
-        fontSize: 36,
+        fontSize: 20,
         fontWeight: "bold",
         color: "#1A4D2E",
         textAlign: 'center',
@@ -16,10 +57,10 @@ export default StyleSheet.create({
     }, margin: {
         margin: 5
     }, avatar: {
-        width: 100,
-        height: 100,
+        width: 70,
+        height: 70,
         borderRadius: 50,
-        marginBottom: 10,
+        // marginBottom: 5,
         borderWidth: 1,
         borderColor: 'white',
         // width:80,
@@ -43,12 +84,12 @@ export default StyleSheet.create({
         textAlign: 'center',
     },
     pending: {
-        backgroundColor: 'yellow',
+        backgroundColor: '#AFD198', // Olive green color for pending status
         color: 'black',
-    },
-    pass: {
-        backgroundColor: 'green',
-    },
+      },
+      pass: {
+        backgroundColor: '#E8DFCA', // Light beige color for received status
+      },
     header: {
         backgroundColor: "#1A4D2E",
         alignItems: "center",
@@ -66,5 +107,19 @@ export default StyleSheet.create({
     successText: {
         color: 'green',
         marginTop: 10,
+    },
+    input: {
+        height: 40,
+        borderColor: '#1A4D2E',
+        borderWidth: 1,
+        borderRadius: 5,
+        marginBottom: 10,
+        paddingHorizontal: 10,
+        backgroundColor: '#E8DFCA',
+      },label: {
+        fontSize: 16,
+        color: '#1A4D2E',
+        fontWeight: 'bold',
+        marginBottom: 10,
     },
 });
