@@ -33,3 +33,8 @@
 - After user receives the package, admin will update the status to received.
 - Lock a user's account when the user transfers ownership of their apartment to someone else.
 - Create survey forms regarding the cleanliness, facilities, and services.
+
+**API, Swagger**
+<img src="https://drive.google.com/file/d/17j6CuVQYfcCEXtFNqUnOMscC5aIBIbRE/view?usp=sharing"/>
+<img src="https://drive.google.com/file/d/1RzuwCTuqscvv10kYfWZwvwaaTEX2wAR4/view?usp=sharing"/>
+<img src="https://drive.google.com/file/d/1X0C4sjepV-BV8kauYCOtiFnIqr3NhyNG/view?usp=sharing"/>
