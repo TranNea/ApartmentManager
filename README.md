@@ -37,4 +37,4 @@
 **API, Swagger**
 ![alt](https://github.com/TranNea/Image/issues/1#issue-2459645508)
 ![alt](https://github.com/TranNea/Image/issues/2#issue-2459645609)
-![alt](https://github.com/TranNea/Image/issues/3#issue-2459645729)
+<img width="1169" alt="Ảnh màn hình 2024-08-11 lúc 16 59 46" src="https://github.com/user-attachments/assets/7044fa62-a465-41bd-a687-babae713b664">
