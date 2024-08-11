@@ -35,6 +35,6 @@
 - Create survey forms regarding the cleanliness, facilities, and services.
 
 **API, Swagger**
-![alt](https://github.com/TranNea/Image/issues/1#issue-2459645508)
-![alt](https://github.com/TranNea/Image/issues/2#issue-2459645609)
+<img width="1446" alt="Ảnh màn hình 2024-08-11 lúc 16 59 28" src="https://github.com/user-attachments/assets/fdf77083-7b91-4de4-a82d-906b40e6c79b">
 <img width="1169" alt="Ảnh màn hình 2024-08-11 lúc 16 59 46" src="https://github.com/user-attachments/assets/7044fa62-a465-41bd-a687-babae713b664">
+<img width="1446" alt="Ảnh màn hình 2024-08-11 lúc 16 59 02" src="https://github.com/user-attachments/assets/cfa76d2d-ff9b-4ba7-8361-1ac1458f9f77">
