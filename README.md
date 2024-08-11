@@ -35,6 +35,6 @@
 - Create survey forms regarding the cleanliness, facilities, and services.
 
 **API, Swagger**
-<img src="https://drive.google.com/file/d/17j6CuVQYfcCEXtFNqUnOMscC5aIBIbRE/view?usp=sharing"/>
-<img src="https://drive.google.com/file/d/1RzuwCTuqscvv10kYfWZwvwaaTEX2wAR4/view?usp=sharing"/>
-<img src="https://drive.google.com/file/d/1X0C4sjepV-BV8kauYCOtiFnIqr3NhyNG/view?usp=sharing"/>
+![alt](https://drive.google.com/file/d/17j6CuVQYfcCEXtFNqUnOMscC5aIBIbRE/view?usp=sharing)
+![alt](https://drive.google.com/file/d/1RzuwCTuqscvv10kYfWZwvwaaTEX2wAR4/view?usp=sharing)
+![alt](https://drive.google.com/file/d/1X0C4sjepV-BV8kauYCOtiFnIqr3NhyNG/view?usp=sharing)
