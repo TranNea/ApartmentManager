@@ -42,7 +42,7 @@
 
 # User interface:
 - Login and Register:
-![đăng nhập](https://github.com/user-attachments/assets/b65ac57f-2f81-43c7-bf71-6aacc952f1ba)
+<img width="200" height="300" src="https://github.com/user-attachments/assets/b65ac57f-2f81-43c7-bf71-6aacc952f1ba">
 ![đăng kí](https://github.com/user-attachments/assets/7aebdafc-b506-4819-a141-6623c29def19)
 
 - Home and Profile:
