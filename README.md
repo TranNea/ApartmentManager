@@ -42,8 +42,8 @@
 
 # User interface:
 **Login and Register:**
-<img width="400" height="600" src="https://github.com/user-attachments/assets/b65ac57f-2f81-43c7-bf71-6aacc952f1ba">
-<img width="400" height="600" src="https://github.com/user-attachments/assets/7aebdafc-b506-4819-a141-6623c29def19">
+<img width="300" height="700" src="https://github.com/user-attachments/assets/b65ac57f-2f81-43c7-bf71-6aacc952f1ba">
+<img width="300" height="700" src="https://github.com/user-attachments/assets/7aebdafc-b506-4819-a141-6623c29def19">
 
 **Home and Profile:**
 ![trang chủ](https://github.com/user-attachments/assets/92d7fd22-2b82-4968-bf71-12dad03d76ba)
