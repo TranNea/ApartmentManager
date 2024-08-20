@@ -41,37 +41,37 @@
 <img width="1446" alt="Ảnh màn hình 2024-08-11 lúc 16 59 02" src="https://github.com/user-attachments/assets/cfa76d2d-ff9b-4ba7-8361-1ac1458f9f77">
 
 # User interface:
-- Login and Register:
-<img width="200" height="300" src="https://github.com/user-attachments/assets/b65ac57f-2f81-43c7-bf71-6aacc952f1ba">
-![đăng kí](https://github.com/user-attachments/assets/7aebdafc-b506-4819-a141-6623c29def19)
+**Login and Register:**
+<img width="400" height="600" src="https://github.com/user-attachments/assets/b65ac57f-2f81-43c7-bf71-6aacc952f1ba">
+<img width="400" height="600" src="https://github.com/user-attachments/assets/7aebdafc-b506-4819-a141-6623c29def19">
 
-- Home and Profile:
+**Home and Profile:**
 ![trang chủ](https://github.com/user-attachments/assets/92d7fd22-2b82-4968-bf71-12dad03d76ba)
 ![profile](https://github.com/user-attachments/assets/d41e085d-34bc-4b67-b116-4fbcc0d617fe)
 
-- Real-time chat:
+**Real-time chat:**
 ![chat](https://github.com/user-attachments/assets/5131e84e-9e61-4c89-b57f-0e265ef29752)
 ![realtimechat](https://github.com/user-attachments/assets/333345f7-ae7b-4442-8725-0579566a94d3)
 
-- Register service:
+**Register service:**
 ![dịch vụ](https://github.com/user-attachments/assets/a30e71b1-ba73-4f39-a393-1121c362abd7)
 
-- Payment invoices:
+**Payment invoices:**
 ![hoá đơn](https://github.com/user-attachments/assets/090de0b4-f039-4b7b-b079-edbb03a9e454)
 ![chi tiết hoá đơn](https://github.com/user-attachments/assets/c2427a24-c030-47a3-8c1b-f827c062345a)
 ![chi tiết hoá dơn 2](https://github.com/user-attachments/assets/ee9c2338-664a-403a-b3e3-ce5057b29c91)
 ![thanh toán hoá đơn](https://github.com/user-attachments/assets/65b64e0d-22b6-4336-93bb-1336726c929d)
 
-- Register information for family members:
+**Register information for family members:**
 ![thông tin người thân](https://github.com/user-attachments/assets/bcf06fe8-ecd3-4fda-8be3-2e409b75dfb5)
 
-- User's electronic locker:
+**User's electronic locker:**
 ![tủ đồ](https://github.com/user-attachments/assets/5d4f993b-24f4-4504-9049-62d96b41faec)
 
-- User's feedback:
+**User's feedback:**
 ![phản ánh](https://github.com/user-attachments/assets/fa27bf1c-e944-42c4-9f69-faa01bfb963d)
 ![tạo phản náh](https://github.com/user-attachments/assets/f8f4ac43-2e1d-4dd4-a83f-e4a21045d6b4)
 
-- Make surveys:
+**Make surveys:**
 ![phiếu khảo sát](https://github.com/user-attachments/assets/9edcda63-21d9-4afc-9f3b-7e26308237c5)
 ![làm khảo sát](https://github.com/user-attachments/assets/549dc0e7-81a2-4005-9795-ca7f49bcea8b)
