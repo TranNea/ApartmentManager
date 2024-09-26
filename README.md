@@ -1,8 +1,9 @@
 # ApartmentManagementApp
-- Language: Python, Javascript, HTML, CSS
+- Language: Python Django, React Native
 - Database: MySQL
-- Other: Django, React Native, Cloudinary, RealTimeChat (firebase)
 - Payment: VIETQR
+- Test: Postman
+- Other: Cloudinary, RealTimeChat (firebase)
 
 # The steps run the project for APIs
 * Cloning the project
