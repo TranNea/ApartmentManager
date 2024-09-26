@@ -3,7 +3,7 @@
 - Database: MySQL
 - Payment: VIETQR
 - Test: Postman
-- Other: Cloudinary, RealTimeChat (firebase)
+- Other: RESTful API, Cloudinary, RealTimeChat (firebase)
 
 # The steps run the project for APIs
 * Cloning the project
